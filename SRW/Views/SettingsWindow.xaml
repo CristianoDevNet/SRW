@@ -1,0 +1,57 @@
+﻿<Window x:Class="SRW.Views.SettingsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Settings"
+        Width="400" Height="480"
+        WindowStartupLocation="CenterScreen"
+        ShowInTaskbar="False"
+        WindowStyle="ToolWindow">
+
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <CheckBox x:Name="chkEnabled" Content="Ativar funcionalidade" />
+
+        <StackPanel Orientation="Horizontal" Grid.Row="1" VerticalAlignment="Center" Margin="0,10,0,0">
+            <TextBlock Text="Horário:" VerticalAlignment="Center" Margin="0,0,5,0" />
+            <TextBox x:Name="txtHour" Width="40" MaxLength="2" HorizontalContentAlignment="Center" ToolTip="Hora (0-23)" Margin="0,0,5,0"/>
+            <TextBlock Text=":" VerticalAlignment="Center" Margin="0,0,5,0" />
+            <TextBox x:Name="txtMinute" Width="40" MaxLength="2" HorizontalContentAlignment="Center" ToolTip="Minuto (0-59)" Margin="0,0,10,0" />
+            <Button x:Name="btnAddTime" Content="Adicionar" Width="75" />
+        </StackPanel>
+
+        <ListView x:Name="lvTimes" Grid.Row="2" Margin="0,10,0,10">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Horário" Width="100" DisplayMemberBinding="{Binding Time}" />
+                    <GridViewColumn Header="Ação" Width="70">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button Content="Remover" Click="BtnRemoveTime_Click" Tag="{Binding}" />
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+        <StackPanel Orientation="Horizontal" Grid.Row="3" VerticalAlignment="Center" Margin="0,0,0,10">
+            <TextBlock Text="Minutos de antecedência:" VerticalAlignment="Center" Margin="0,0,10,0"/>
+            <TextBox x:Name="txtAdvanceMinutes" Width="50" HorizontalContentAlignment="Center" ToolTip="Quantos minutos antes da hora exibir a mensagem"/>
+        </StackPanel>
+
+        <StackPanel Orientation="Vertical" Grid.Row="4" Margin="0,0,0,10">
+            <TextBlock Text="Mensagem de aviso personalizada (use {minutos}):" Margin="0,0,0,5"/>
+            <TextBox x:Name="txtCustomMessage" ToolTip="Exemplo: Faltam {minutos} para o reset." />
+        </StackPanel>
+
+        <Button Grid.Row="5" Content="Salvar Configurações" Width="150" HorizontalAlignment="Right" Click="BtnSave_Click" />
+    </Grid>
+</Window>
