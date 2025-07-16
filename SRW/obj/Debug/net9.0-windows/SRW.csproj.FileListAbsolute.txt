@@ -3,11 +3,14 @@ C:\Users\crist\RiderProjects\SRW\SRW\bin\Debug\net9.0-windows\SRW.deps.json
 C:\Users\crist\RiderProjects\SRW\SRW\bin\Debug\net9.0-windows\SRW.runtimeconfig.json
 C:\Users\crist\RiderProjects\SRW\SRW\bin\Debug\net9.0-windows\SRW.dll
 C:\Users\crist\RiderProjects\SRW\SRW\bin\Debug\net9.0-windows\SRW.pdb
+C:\Users\crist\RiderProjects\SRW\SRW\bin\Debug\net9.0-windows\HandyControl.dll
 C:\Users\crist\RiderProjects\SRW\SRW\bin\Debug\net9.0-windows\Hardcodet.NotifyIcon.Wpf.dll
 C:\Users\crist\RiderProjects\SRW\SRW\obj\Debug\net9.0-windows\SRW.csproj.AssemblyReference.cache
+C:\Users\crist\RiderProjects\SRW\SRW\obj\Debug\net9.0-windows\OverlayWindow.baml
 C:\Users\crist\RiderProjects\SRW\SRW\obj\Debug\net9.0-windows\Views\AboutWindow.baml
 C:\Users\crist\RiderProjects\SRW\SRW\obj\Debug\net9.0-windows\Views\SettingsWindow.baml
 C:\Users\crist\RiderProjects\SRW\SRW\obj\Debug\net9.0-windows\App.baml
+C:\Users\crist\RiderProjects\SRW\SRW\obj\Debug\net9.0-windows\OverlayWindow.g.cs
 C:\Users\crist\RiderProjects\SRW\SRW\obj\Debug\net9.0-windows\Views\AboutWindow.g.cs
 C:\Users\crist\RiderProjects\SRW\SRW\obj\Debug\net9.0-windows\Views\SettingsWindow.g.cs
 C:\Users\crist\RiderProjects\SRW\SRW\obj\Debug\net9.0-windows\App.g.cs
@@ -17,11 +20,10 @@ C:\Users\crist\RiderProjects\SRW\SRW\obj\Debug\net9.0-windows\SRW.GeneratedMSBui
 C:\Users\crist\RiderProjects\SRW\SRW\obj\Debug\net9.0-windows\SRW.AssemblyInfoInputs.cache
 C:\Users\crist\RiderProjects\SRW\SRW\obj\Debug\net9.0-windows\SRW.AssemblyInfo.cs
 C:\Users\crist\RiderProjects\SRW\SRW\obj\Debug\net9.0-windows\SRW.csproj.CoreCompileInputs.cache
+C:\Users\crist\RiderProjects\SRW\SRW\obj\Debug\net9.0-windows\SRW.sourcelink.json
 C:\Users\crist\RiderProjects\SRW\SRW\obj\Debug\net9.0-windows\SRW.csproj.Up2Date
 C:\Users\crist\RiderProjects\SRW\SRW\obj\Debug\net9.0-windows\SRW.dll
 C:\Users\crist\RiderProjects\SRW\SRW\obj\Debug\net9.0-windows\refint\SRW.dll
 C:\Users\crist\RiderProjects\SRW\SRW\obj\Debug\net9.0-windows\SRW.pdb
 C:\Users\crist\RiderProjects\SRW\SRW\obj\Debug\net9.0-windows\SRW.genruntimeconfig.cache
 C:\Users\crist\RiderProjects\SRW\SRW\obj\Debug\net9.0-windows\ref\SRW.dll
-C:\Users\crist\RiderProjects\SRW\SRW\obj\Debug\net9.0-windows\OverlayWindow.baml
-C:\Users\crist\RiderProjects\SRW\SRW\obj\Debug\net9.0-windows\OverlayWindow.g.cs

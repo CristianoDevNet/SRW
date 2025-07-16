@@ -6,7 +6,7 @@ using System.Windows.Controls;
 
 namespace SRW.Views
 {
-    public partial class SettingsWindow : Window
+    public partial class SettingsWindow : HandyControl.Controls.Window
     {
         public ObservableCollection<TimeEntry> Times { get; set; } = new();
 

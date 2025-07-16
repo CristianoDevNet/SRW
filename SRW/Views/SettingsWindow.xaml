@@ -1,6 +1,7 @@
-﻿<Window x:Class="SRW.Views.SettingsWindow"
+﻿<hc:Window x:Class="SRW.Views.SettingsWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:hc="https://handyorg.github.io/handycontrol"
         Title="Settings"
         Width="400" Height="480"
         WindowStartupLocation="CenterScreen"
@@ -24,17 +25,17 @@
             <TextBox x:Name="txtHour" Width="40" MaxLength="2" HorizontalContentAlignment="Center" ToolTip="Hora (0-23)" Margin="0,0,5,0"/>
             <TextBlock Text=":" VerticalAlignment="Center" Margin="0,0,5,0" />
             <TextBox x:Name="txtMinute" Width="40" MaxLength="2" HorizontalContentAlignment="Center" ToolTip="Minuto (0-59)" Margin="0,0,10,0" />
-            <Button x:Name="btnAddTime" Content="Adicionar" Width="75" />
+            <Button x:Name="btnAddTime" Content="Adicionar" Width="75" Style="{StaticResource ButtonPrimary}" />
         </StackPanel>
 
         <ListView x:Name="lvTimes" Grid.Row="2" Margin="0,10,0,10">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Horário" Width="100" DisplayMemberBinding="{Binding Time}" />
-                    <GridViewColumn Header="Ação" Width="70">
+                    <GridViewColumn Header="Ação">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <Button Content="Remover" Click="BtnRemoveTime_Click" Tag="{Binding}" />
+                                <Button Content="Remover" Click="BtnRemoveTime_Click" Tag="{Binding}" Style="{StaticResource ButtonDanger.Small}" />
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
@@ -52,6 +53,6 @@
             <TextBox x:Name="txtCustomMessage" ToolTip="Exemplo: Faltam {minutos} para o reset." />
         </StackPanel>
 
-        <Button Grid.Row="5" Content="Salvar Configurações" Width="150" HorizontalAlignment="Right" Click="BtnSave_Click" />
+        <Button Grid.Row="5" Content="Salvar Configurações" Width="150" HorizontalAlignment="Right" Click="BtnSave_Click" Style="{StaticResource ButtonPrimary}" />
     </Grid>
-</Window>
+</hc:Window>

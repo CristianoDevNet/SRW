@@ -9,5 +9,5 @@
     "17:00",
     "21:00"
   ],
-  "CustomMessage": "Falta(m) {minutos} minuto(s) para o reset."
+  "CustomMessage": "Faltam {minutos} minutos para o reset."
 }

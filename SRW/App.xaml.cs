@@ -4,6 +4,7 @@ using System.Linq;
 using System.Runtime.InteropServices;
 using System.Threading;
 using System.Windows;
+using HandyControl.Themes;
 using Hardcodet.Wpf.TaskbarNotification;
 using SRW.Views;
 
@@ -41,6 +42,7 @@ namespace SRW
             base.OnStartup(e);
             _settings = SettingsManager.Load();
             _trayIcon = (TaskbarIcon)FindResource("TrayIcon");
+            ThemeManager.Current.ApplicationTheme = ApplicationTheme.Dark;
             StartMonitoring();
         }
 
