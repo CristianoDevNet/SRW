@@ -1,0 +1,44 @@
+# Ignore arquivos e pastas do Visual Studio
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Build results
+bin/
+obj/
+[Bb]uild/
+[Ll]og/
+TestResults/
+*.log
+
+# Arquivos de pacotes NuGet
+*.nupkg
+*.snupkg
+packages/
+*.nuspec
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# Arquivos de configuração locais
+*.local.json
+*.env
+
+# Arquivos do Rider/JetBrains
+.idea/
+*.sln.iml
+
+# Arquivos do sistema operacional
+.DS_Store
+Thumbs.db
+
+# Outros arquivos temporários
+*.tmp
+*.bak
+*.swp
+*.cache
+
+# Arquivos de publish
+publish/
