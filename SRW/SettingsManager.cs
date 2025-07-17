@@ -16,6 +16,7 @@ public static class SettingsManager
         try
         {
             var json = File.ReadAllText(settingsFile);
+            
             return JsonSerializer.Deserialize<AppSettings>(json) ?? new AppSettings();
         }
         catch
@@ -27,6 +28,7 @@ public static class SettingsManager
     public static void Save(AppSettings settings)
     {
         var json = JsonSerializer.Serialize(settings, new JsonSerializerOptions { WriteIndented = true });
+       
         File.WriteAllText(settingsFile, json);
     }
 }

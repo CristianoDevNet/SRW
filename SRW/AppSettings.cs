@@ -7,8 +7,11 @@ namespace SRW;
 public class AppSettings : INotifyPropertyChanged
 {
     private bool _enabled;
+    
     private int _advanceMinutes = 5;
+    
     private List<string> _timesList = new();
+    
     private string _customMessage = "Faltam {minutos} minuto(s) para o reset.";
 
     public bool Enabled

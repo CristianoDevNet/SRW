@@ -28,6 +28,7 @@ namespace SRW.Views
             chkEnabled.IsChecked = _appSettings.Enabled;
 
             txtAdvanceMinutes.Text = _appSettings.AdvanceMinutes.ToString();
+            
             txtCustomMessage.Text = _appSettings.CustomMessage ?? "";
 
             Times.Clear();
@@ -66,11 +67,14 @@ namespace SRW.Views
             Times.Add(new TimeEntry { Time = newTime });
 
             var sorted = Times.OrderBy(t => TimeSpan.Parse(t.Time)).ToList();
+            
             Times.Clear();
+            
             foreach (var item in sorted)
                 Times.Add(item);
 
             txtHour.Clear();
+            
             txtMinute.Clear();
         }
 

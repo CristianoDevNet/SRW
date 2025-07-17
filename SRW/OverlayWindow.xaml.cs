@@ -22,6 +22,7 @@ namespace SRW
             base.OnSourceInitialized(e);
 
             var hwnd = new WindowInteropHelper(this).Handle;
+           
             int extendedStyle = GetWindowLong(hwnd, GWL_EXSTYLE);
 
             // WS_EX_NOACTIVATE evita roubo de foco
@@ -30,7 +31,9 @@ namespace SRW
         }
 
         private const int GWL_EXSTYLE = -20;
+        
         private const int WS_EX_TRANSPARENT = 0x00000020;
+        
         private const int WS_EX_NOACTIVATE = 0x08000000;
 
         [DllImport("user32.dll")]

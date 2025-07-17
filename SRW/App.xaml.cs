@@ -13,14 +13,21 @@ namespace SRW
     public partial class App : Application
     {
         private OverlayWindow? _overlay;
+        
         private AppSettings _settings = new();
+        
         private TaskbarIcon? _trayIcon;
+        
         private string _lastMessage = "";
 
         [DllImport("user32.dll")] static extern IntPtr GetForegroundWindow();
+        
         [DllImport("user32.dll")] static extern bool GetWindowRect(IntPtr hWnd, out RECT lpRect);
+        
         [DllImport("user32.dll")] static extern IntPtr MonitorFromWindow(IntPtr hwnd, uint dwFlags);
+        
         [DllImport("user32.dll")] static extern bool GetMonitorInfo(IntPtr hMonitor, ref MONITORINFO lpmi);
+        
         [DllImport("user32.dll")] static extern bool IsWindowVisible(IntPtr hwnd);
 
         const uint MONITOR_DEFAULTTONEAREST = 2;
@@ -32,17 +39,24 @@ namespace SRW
         public struct MONITORINFO
         {
             public int cbSize;
+           
             public RECT rcMonitor;
+            
             public RECT rcWork;
+            
             public uint dwFlags;
         }
 
         protected override void OnStartup(StartupEventArgs e)
         {
             base.OnStartup(e);
+         
             _settings = SettingsManager.Load();
+            
             _trayIcon = (TaskbarIcon)FindResource("TrayIcon");
+            
             ThemeManager.Current.ApplicationTheme = ApplicationTheme.Dark;
+            
             StartMonitoring();
         }
 
@@ -54,22 +68,27 @@ namespace SRW
                 {
                     try { MonitorSCUM(); }
                     catch (Exception ex) { Debug.WriteLine("Erro no monitoramento: " + ex.Message); }
+                    
                     Thread.Sleep(1000);
                 }
             })
             {
                 IsBackground = true
             };
+            
             thread.SetApartmentState(ApartmentState.STA);
+            
             thread.Start();
         }
 
         private void MonitorSCUM()
         {
             var proc = Process.GetProcessesByName("SCUM").FirstOrDefault();
+            
             if (proc == null || proc.MainWindowHandle == IntPtr.Zero)
             {
                 HideOverlay();
+            
                 return;
             }
 
@@ -81,17 +100,21 @@ namespace SRW
             if (!IsWindowVisible(hwnd) || !IsFullscreen(hwnd) || !IsTopmost(hwnd))
             {
                 HideOverlay();
+                
                 return;
             }
 
             _settings = SettingsManager.Load();
+            
             if (!_settings.Enabled || _settings.TimesList.Count == 0)
             {
                 HideOverlay();
+            
                 return;
             }
 
             var now = DateTime.Now;
+            
             bool overlayAtivado = false;
 
             foreach (var timeStr in _settings.TimesList)
@@ -99,11 +122,14 @@ namespace SRW
                 if (TimeSpan.TryParse(timeStr, out var targetTime))
                 {
                     var targetDateTime = now.Date + targetTime;
+            
                     if (targetDateTime < now)
                         targetDateTime = targetDateTime.AddDays(1);
 
                     var diff = targetDateTime - now;
+                    
                     var totalMinutes = diff.TotalMinutes;
+                    
                     var totalSeconds = (int)Math.Ceiling(diff.TotalSeconds);
 
                     Debug.WriteLine($"[SRW DEBUG] Hora atual: {now:HH:mm:ss} | Alvo: {targetDateTime:HH:mm:ss} | Diferença: {totalMinutes:F2} min");
@@ -121,15 +147,20 @@ namespace SRW
                             if (totalSeconds % 10 == 0)
                             {
                                 msg = $"Faltam {totalSeconds} segundo(s) para o reset.";
+                    
                                 Debug.WriteLine("ATUALIZANDO MSG (10s): " + msg);
+                                
                                 UpdateOverlay(hwnd, msg);
                             }
                         }
                         else
                         {
                             int minutosRestantes = (int)Math.Ceiling(totalMinutes);
+                            
                             msg = _settings.CustomMessage.Replace("{minutos}", minutosRestantes.ToString());
+                            
                             Debug.WriteLine("ATUALIZANDO MSG (minutos): " + msg);
+                            
                             UpdateOverlay(hwnd, msg);
                         }
                     }
@@ -149,6 +180,7 @@ namespace SRW
                 if (_overlay == null)
                 {
                     _overlay = new OverlayWindow();
+                  
                     _overlay.Show();
                 }
                 else if (!_overlay.IsVisible)
@@ -159,8 +191,11 @@ namespace SRW
                 if (GetWindowRect(hwnd, out RECT rect))
                 {
                     _overlay.Left = rect.Left;
+                 
                     _overlay.Top = rect.Top + 20;
+                    
                     _overlay.Width = rect.Right - rect.Left;
+                    
                     _overlay.Height = 100;
                 }
 
@@ -181,6 +216,7 @@ namespace SRW
                 if (_overlay != null)
                 {
                     _overlay.Hide();
+                    
                     _lastMessage = "";
                 }
             });
@@ -192,7 +228,9 @@ namespace SRW
                 return false;
 
             IntPtr monitor = MonitorFromWindow(hwnd, MONITOR_DEFAULTTONEAREST);
+            
             MONITORINFO mi = new() { cbSize = Marshal.SizeOf<MONITORINFO>() };
+            
             if (!GetMonitorInfo(monitor, ref mi))
                 return false;
 
@@ -212,21 +250,27 @@ namespace SRW
         private void OnSettingsClick(object sender, RoutedEventArgs e)
         {
             var win = new SettingsWindow { WindowStartupLocation = WindowStartupLocation.CenterScreen };
+            
             win.Show();
+            
             win.Activate();
         }
 
         private void OnAboutClick(object sender, RoutedEventArgs e)
         {
             var win = new AboutWindow { WindowStartupLocation = WindowStartupLocation.CenterScreen };
+            
             win.Show();
+            
             win.Activate();
         }
 
         private void OnExitClick(object sender, RoutedEventArgs e)
         {
             _overlay?.Close();
+            
             _trayIcon?.Dispose();
+            
             Shutdown();
         }
 
