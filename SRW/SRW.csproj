@@ -7,7 +7,7 @@
         <ImplicitUsings>enable</ImplicitUsings>
         <UseWPF>true</UseWPF>
         <PackageIcon>SRW_icon.png</PackageIcon>
-        <ApplicationIcon>SRW.ico</ApplicationIcon>
+        <ApplicationIcon>Resources\SRW.ico</ApplicationIcon>
     </PropertyGroup>
 
     <ItemGroup>
@@ -21,11 +21,6 @@
       <None Remove="Resources\Scum.png" />
       <None Remove="Resources\SRW.ico" />
       <None Remove="Resources\SRW.png" />
-      <Content Include="SRW.ico" />
-      <None Include="..\..\..\Downloads\SRW_icon.png">
-        <Pack>True</Pack>
-        <PackagePath>\</PackagePath>
-      </None>
       <Resource Include="Resources\Delocco.png" />
       <Resource Include="Resources\Manissoba.png" />
       <Resource Include="Resources\Scum.png" />
