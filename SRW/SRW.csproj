@@ -14,8 +14,16 @@
     </ItemGroup>
 
     <ItemGroup>
+      <None Remove="Resources\Delocco.png" />
+      <None Remove="Resources\Manissoba.png" />
+      <None Remove="Resources\Scum.png" />
       <None Remove="Resources\SRW.ico" />
+      <None Remove="Resources\SRW.png" />
+      <Resource Include="Resources\Delocco.png" />
+      <Resource Include="Resources\Manissoba.png" />
+      <Resource Include="Resources\Scum.png" />
       <Resource Include="Resources\SRW.ico" />
+      <Resource Include="Resources\SRW.png" />
     </ItemGroup>
 
 </Project>

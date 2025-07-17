@@ -1,8 +1,6 @@
-﻿using System.Windows;
+﻿namespace SRW.Views;
 
-namespace SRW.Views;
-
-public partial class AboutWindow : Window
+public partial class AboutWindow : HandyControl.Controls.Window
 {
     public AboutWindow()
     {

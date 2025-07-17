@@ -1,13 +1,45 @@
-﻿<Window x:Class="SRW.Views.AboutWindow"
+﻿<hc:Window x:Class="SRW.Views.AboutWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:hc="https://handyorg.github.io/handycontrol"
-        Title="About"
-        Width="300" Height="150"
+        Title="Sobre"
+        Width="350" Height="230"
         ShowInTaskbar="False"
-        WindowStyle="ToolWindow"
-        Background="{DynamicResource BackgroundBrush}">
-    <Grid>
-        <TextBlock Text="SRW v1.0" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" FontSize="16" />
+        WindowStyle="ToolWindow" 
+        ShowMinButton="False"
+        ShowMaxButton="False"
+        ResizeMode="NoResize">
+    <hc:Window.Background>
+        <ImageBrush ImageSource="/Resources/SRW.png" Stretch="UniformToFill" Opacity="0.1"/>
+    </hc:Window.Background>
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <TextBlock Text="SRW v1.0" HorizontalAlignment="Center" FontWeight="Bold" FontSize="16" Margin="0,0,0,10" Style="{StaticResource TextBlockDefaultWarning}"/>
+        <Grid Grid.Row="1" HorizontalAlignment="Center">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="50"/>
+                <ColumnDefinition Width="150"/>
+            </Grid.ColumnDefinitions>
+
+            <!-- Linha 1: Scum -->
+            <Image Grid.Row="0" Grid.Column="0" Width="40" Height="40" Source="/Resources/Scum.png" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+            <TextBlock Grid.Row="0" Grid.Column="1" Text="O Jogo" Margin="10" FontSize="14" Style="{StaticResource TextBlockDefault}"/>
+
+            <!-- Linha 2: Manissoba -->
+            <Image Grid.Row="1" Grid.Column="0" Width="40" Height="40" Source="/Resources/Manissoba.png" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,12,0,0"/>
+            <TextBlock Grid.Row="1" Grid.Column="1" Text="Criador: Manissoba" Margin="10,12,10,0" FontSize="14" Style="{StaticResource TextBlockDefault}"/>
+
+            <!-- Linha 3: Delocco -->
+            <Image Grid.Row="2" Grid.Column="0" Width="40" Height="40" Source="/Resources/Delocco.png" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,12,0,0"/>
+            <TextBlock Grid.Row="2" Grid.Column="1" Text="Tester: Delocco" Margin="10,12,10,0" FontSize="14" Style="{StaticResource TextBlockDefault}"/>
+        </Grid>
     </Grid>
-</Window>
+</hc:Window>

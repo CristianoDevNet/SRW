@@ -1,4 +1,4 @@
-# Ignore arquivos e pastas do Visual Studio
+# Visual Studio
 .vs/
 *.user
 *.suo
@@ -13,7 +13,7 @@ obj/
 TestResults/
 *.log
 
-# Arquivos de pacotes NuGet
+# NuGet
 *.nupkg
 *.snupkg
 packages/
@@ -22,23 +22,19 @@ project.lock.json
 project.fragment.lock.json
 artifacts/
 
-# Arquivos de configuração locais
-*.local.json
-*.env
-
-# Arquivos do Rider/JetBrains
+# Rider/JetBrains
 .idea/
 *.sln.iml
 
-# Arquivos do sistema operacional
+# Sistema operacional
 .DS_Store
 Thumbs.db
 
-# Outros arquivos temporários
+# Outros temporários
 *.tmp
 *.bak
 *.swp
 *.cache
 
-# Arquivos de publish
+# Publish
 publish/
