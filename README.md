@@ -1,6 +1,6 @@
 # SRW
 
-Baixe a [ultima versão](https://github.com/CristianoDevNet/SRW/releases).
+Baixe a [ultima versão do SRW](https://github.com/CristianoDevNet/SRW/releases).
 
 Para rodar o programa, você precisa ter instalado a versão do .NET 9.0 Desktop Runtime - [Baixe aqui](https://dotnet.microsoft.com/en-us/download/dotnet/9.0)
 
