@@ -12,6 +12,10 @@ namespace SRW
 {
     public partial class App : Application
     {
+        private SettingsWindow? _settingsWindow;
+        private AboutWindow? _aboutWindow;
+        private Mutex? _mutex;
+        
         private OverlayWindow? _overlay;
         
         private AppSettings _settings = new();
@@ -49,15 +53,28 @@ namespace SRW
 
         protected override void OnStartup(StartupEventArgs e)
         {
+            const string appName = "SRW_SingleInstance";
+            _mutex = new Mutex(true, appName, out bool createdNew);
+
+            if (!createdNew)
+            {
+                MessageBox.Show("Uma instância do aplicativo já está em execução.", "SRW", 
+                    MessageBoxButton.OK, MessageBoxImage.Information);
+                Shutdown();
+                return;
+            }
+
             base.OnStartup(e);
-         
             _settings = SettingsManager.Load();
-            
             _trayIcon = (TaskbarIcon)FindResource("TrayIcon");
-            
             ThemeManager.Current.ApplicationTheme = ApplicationTheme.Dark;
-            
             StartMonitoring();
+        }
+
+        protected override void OnExit(ExitEventArgs e)
+        {
+            base.OnExit(e);
+            _mutex?.ReleaseMutex();
         }
 
         private void StartMonitoring()
@@ -249,20 +266,42 @@ namespace SRW
 
         private void OnSettingsClick(object sender, RoutedEventArgs e)
         {
-            var win = new SettingsWindow { WindowStartupLocation = WindowStartupLocation.CenterScreen };
-            
-            win.Show();
-            
-            win.Activate();
+            if (_settingsWindow != null)
+            {
+                _settingsWindow.WindowState = WindowState.Normal;
+                _settingsWindow.Activate();
+                _settingsWindow.Focus();
+                return;
+            }
+
+            _settingsWindow = new SettingsWindow 
+            { 
+                WindowStartupLocation = WindowStartupLocation.CenterScreen 
+            };
+        
+            _settingsWindow.Closed += (s, args) => _settingsWindow = null;
+            _settingsWindow.Show();
+            _settingsWindow.Activate();
         }
 
         private void OnAboutClick(object sender, RoutedEventArgs e)
         {
-            var win = new AboutWindow { WindowStartupLocation = WindowStartupLocation.CenterScreen };
-            
-            win.Show();
-            
-            win.Activate();
+            if (_aboutWindow != null)
+            {
+                _aboutWindow.WindowState = WindowState.Normal;
+                _aboutWindow.Activate();
+                _aboutWindow.Focus();
+                return;
+            }
+
+            _aboutWindow = new AboutWindow 
+            { 
+                WindowStartupLocation = WindowStartupLocation.CenterScreen 
+            };
+        
+            _aboutWindow.Closed += (s, args) => _aboutWindow = null;
+            _aboutWindow.Show();
+            _aboutWindow.Activate();
         }
 
         private void OnExitClick(object sender, RoutedEventArgs e)
