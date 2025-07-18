@@ -1,39 +1,44 @@
 # SRW
 
-SRW È uma aplicaÁ„o WPF para Windows, desenvolvida em .NET 9, que permite configurar hor·rios e mensagens de aviso personalizadas.
+[![Tutorial do SRW](https://img.youtube.com/vi/YOUTUBE_VIDEO_ID/maxresdefault.jpg)](https://www.youtube.com/watch?v=YOUTUBE_VIDEO_ID)
+
+Clique na imagem acima para assistir ao v√≠deo tutorial de como usar o programa.
+
+
+SRW √© uma aplica√ß√£o WPF para Windows, desenvolvida em .NET 9, que permite configurar hor√°rios e mensagens de aviso personalizadas.
 
 ## Funcionalidades
 
 - Ativar ou desativar a funcionalidade principal.
-- Adicionar m˙ltiplos hor·rios (hora e minuto) para notificaÁıes.
-- Remover hor·rios cadastrados facilmente.
-- Definir quantos minutos antes do hor·rio ser· exibida a mensagem de aviso.
+- Adicionar m√∫ltiplos hor√°rios (hora e minuto) para notifica√ß√µes.
+- Remover hor√°rios cadastrados facilmente.
+- Definir quantos minutos antes do hor√°rio ser√° exibida a mensagem de aviso.
 - Personalizar a mensagem de aviso utilizando o placeholder `{minutos}`.
 
 ## Sobre o funcionamento
 
-SRW È um aplicativo que fica minimizado na bandeja do sistema (systray/tryicon).  
-… necess·rio que o aplicativo esteja rodando para que as notificaÁıes funcionem corretamente no SCUM.
+SRW √© um aplicativo que fica minimizado na bandeja do sistema (systray/tryicon).  
+√â necess√°rio que o aplicativo esteja rodando para que as notifica√ß√µes funcionem corretamente no SCUM.
 
-## PrÈ-requisitos
+## Pr√©-requisitos
 
 - [SDK do .NET 9](https://dotnet.microsoft.com/download/dotnet/9.0)
 - Windows 10 ou superior
 
 ## Como executar
 
-1. Clone o repositÛrio:
-2. Abra a soluÁ„o no Visual Studio 2022.
+1. Clone o reposit√≥rio:
+2. Abra a solu√ß√£o no Visual Studio 2022.
 3. Restaure os pacotes NuGet.
-4. Compile a soluÁ„o.
+4. Compile a solu√ß√£o.
 
 Para rodar:
 - Pressione `F5` no Visual Studio ou execute:
 
 ## Uso
 
-- Acesse a janela de configuraÁıes para adicionar hor·rios e definir a mensagem de aviso.
-- Configure quantos minutos antes do hor·rio deseja ser notificado.
+- Acesse a janela de configura√ß√µes para adicionar hor√°rios e definir a mensagem de aviso.
+- Configure quantos minutos antes do hor√°rio deseja ser notificado.
 - Personalize a mensagem conforme sua necessidade.
 
 ## Tecnologias
@@ -41,6 +46,6 @@ Para rodar:
 - WPF (.NET 9)
 - [HandyControl](https://github.com/HandyOrg/HandyControl) para componentes visuais aprimorados
 
-## LicenÁa
+## Licen√ßa
 
-Este projeto est· licenciado sob a licenÁa MIT.
+Este projeto est√° licenciado sob a licen√ßa MIT.
