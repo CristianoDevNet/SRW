@@ -27,7 +27,7 @@ SRW é um aplicativo que fica minimizado na bandeja do sistema (systray/tryicon)
 - [SDK do .NET 9](https://dotnet.microsoft.com/download/dotnet/9.0)
 - Windows 10 ou superior
 
-## Como executar
+## Como executar (para desenvolvedores)
 
 1. Clone o repositório:
 2. Abra a solução no Visual Studio 2022.
