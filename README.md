@@ -2,7 +2,7 @@
 
 Baixe a [ultima versão](https://github.com/CristianoDevNet/SRW/releases).
 
-Você precisa ter instalado a versão do .NET 9.0 Desktop Runtime - [Baixe aqui](https://dotnet.microsoft.com/en-us/download/dotnet/9.0)
+Você rodar o programa, você precisa ter instalado a versão do .NET 9.0 Desktop Runtime - [Baixe aqui](https://dotnet.microsoft.com/en-us/download/dotnet/9.0)
 
 ### Clique na imagem abaixo para assistir ao vídeo tutorial de como usar o programa.
 [![Tutorial do SRW](https://github.com/user-attachments/assets/56377291-a2a9-40ad-b6c6-f98815009734)](https://www.youtube.com/watch?v=zUy99pMKag8)
