@@ -1,6 +1,7 @@
 # SRW
 
-[![Tutorial do SRW](https://img.youtube.com/vi/YOUTUBE_VIDEO_ID/maxresdefault.jpg)](https://www.youtube.com/watch?v=YOUTUBE_VIDEO_ID)
+[![Tutorial do SRW]([https://img.youtube.com/vi/YOUTUBE_VIDEO_ID/maxresdefault.jpg](https://github.com/user-attachments/assets/56377291-a2a9-40ad-b6c6-f98815009734))](https://www.youtube.com/watch?v=zUy99pMKag8)
+
 
 Clique na imagem acima para assistir ao vídeo tutorial de como usar o programa.
 
